@@ -22,7 +22,7 @@ namespace Mango.Services.ShoppingCartAPI.Service
             {
                 return JsonConvert.DeserializeObject<CouponDto>(Convert.ToString(resp.Result));
             }
-            return CouponDto();
+            return new CouponDto();
         }
     }
 }

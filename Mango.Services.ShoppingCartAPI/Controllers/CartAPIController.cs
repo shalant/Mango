@@ -18,13 +18,15 @@ namespace Mango.Services.ShoppingCartAPI.Controllers
         private IMapper _mapper;
         private readonly AppDbContext _db;
         private IProductService _productService;
+        private ICouponService _couponService;
         public CartAPIController(AppDbContext db,
-            IMapper mapper, IProductService productService)
+            IMapper mapper, IProductService productService, ICouponService couponService)
         {
             _db = db;
             _productService = productService;
             this._response = new ResponseDto();
             _mapper = mapper;
+            _couponService = couponService;
         }
 
         [HttpGet("GetCart/{userId}")]
@@ -45,6 +47,16 @@ namespace Mango.Services.ShoppingCartAPI.Controllers
                 {
                     item.Product = productDtos.FirstOrDefault(u => u.ProductId == item.ProductId);
                     cart.CartHeader.CartTotal += (item.Count * item.Product.Price);
+                }
+                //apply coupon if any
+                if(!string.IsNullOrEmpty(cart.CartHeader.CouponCode))
+                {
+                    CouponDto coupon = await _couponService.GetCoupon(cart.CartHeader.CouponCode);
+                    if(coupon != null && cart.CartHeader.CartTotal > coupon.MinAmount) 
+                    {
+                        cart.CartHeader.CartTotal -= coupon.DiscountAmount;
+                        cart.CartHeader.Discount = coupon.DiscountAmount;
+                    }
                 }
 
                 _response.Result = cart;
@@ -88,7 +100,7 @@ namespace Mango.Services.ShoppingCartAPI.Controllers
                     //create header and response
                     CartHeader cartHeader = _mapper.Map<CartHeader>(cartDto.CartHeader);
                     _db.CartHeaders.Add(cartHeader);
-                    _db.SaveChangesAsync();
+                    await _db.SaveChangesAsync();
                     cartDto.CartDetails.First().CartHeaderId = cartHeader.CartHeaderId;
                     _db.CartDetails.Add(_mapper.Map<CartDetails>(cartDto.CartDetails.First()));
                     await _db.SaveChangesAsync();
