@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mango.Services.ProductAPI",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mango.Services.ShoppingCartAPI", "Mango.Services.ShoppingCartAPI\Mango.Services.ShoppingCartAPI.csproj", "{10DBA5AF-EC38-43BD-88F7-7671B4D274E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mango.MessageBus", "Mango.MessageBus\Mango.MessageBus.csproj", "{9C023691-F1AA-4BDD-B791-F2B148DDEBE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mango.Services.EmailAPI", "Mango.Services.EmailAPI\Mango.Services.EmailAPI.csproj", "{F3FCE389-8256-4189-8104-EA26BFA4988D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,14 @@ Global
 		{10DBA5AF-EC38-43BD-88F7-7671B4D274E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10DBA5AF-EC38-43BD-88F7-7671B4D274E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10DBA5AF-EC38-43BD-88F7-7671B4D274E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C023691-F1AA-4BDD-B791-F2B148DDEBE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C023691-F1AA-4BDD-B791-F2B148DDEBE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C023691-F1AA-4BDD-B791-F2B148DDEBE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C023691-F1AA-4BDD-B791-F2B148DDEBE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3FCE389-8256-4189-8104-EA26BFA4988D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3FCE389-8256-4189-8104-EA26BFA4988D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3FCE389-8256-4189-8104-EA26BFA4988D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3FCE389-8256-4189-8104-EA26BFA4988D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +69,8 @@ Global
 		{9AB302A7-1DD2-4CEA-A400-B2DDA76A4AAB} = {5C784353-6A88-44A2-8223-599A6579F624}
 		{857A83A1-FBB3-4FCA-BE0B-923B3E2CB3DA} = {5C784353-6A88-44A2-8223-599A6579F624}
 		{10DBA5AF-EC38-43BD-88F7-7671B4D274E0} = {5C784353-6A88-44A2-8223-599A6579F624}
+		{9C023691-F1AA-4BDD-B791-F2B148DDEBE5} = {D563F0AB-6AAB-4D43-B429-A16597AD9BF1}
+		{F3FCE389-8256-4189-8104-EA26BFA4988D} = {5C784353-6A88-44A2-8223-599A6579F624}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4F9E0EFD-8C3E-428D-B630-387941371219}
