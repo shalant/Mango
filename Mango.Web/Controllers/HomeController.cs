@@ -77,7 +77,6 @@ namespace Mango.Web.Controllers
 
             List<CartDetailsDto> cartDetailsDtos = new() { cartDetails };
             cartDto.CartDetails = cartDetailsDtos;
-            ProductDto? model = new();
 
             ResponseDto? response = await _cartService.UpsertCartAsync(cartDto);
 

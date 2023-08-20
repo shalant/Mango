@@ -20,7 +20,7 @@ namespace Mango.Web.Service
             {
                 ApiType = SD.ApiType.POST,
                 Data = cartDto,
-                Url = SD.CouponAPIBase + "/api/cart/ApplyCoupon"
+                Url = SD.ShoppingCartAPIBase + "/api/cart/ApplyCoupon"
             });
         }
 
