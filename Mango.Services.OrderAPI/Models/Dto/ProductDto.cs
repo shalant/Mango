@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Mango.Services.OrderAPI.Models.Dto
+﻿namespace Mango.Services.OrderAPI.Models.Dto
 {
     public class ProductDto
     {
@@ -11,7 +9,6 @@ namespace Mango.Services.OrderAPI.Models.Dto
         public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
 
-        [Range(1, 100)]
         public int Count { get; set; } = 1;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Mango.Services.OrderAPI.Models.Dto;
+using Mango.Services.OrderAPI.Models;
 
 namespace Mango.Services.OrderAPI
 {
@@ -18,8 +19,8 @@ namespace Mango.Services.OrderAPI
 
                     config.CreateMap<OrderDetailsDto, CartDetailsDto>();
 
-                    config.CreateMap<OrderHeaderDto, OrderHeaderDto>().ReverseMap();
-                    config.CreateMap<OrderDetailsDto, OrderDetailsDto>().ReverseMap();
+                    config.CreateMap<OrderHeader, OrderHeaderDto>().ReverseMap();
+                    config.CreateMap<OrderDetailsDto, OrderDetails>().ReverseMap();
                 });
                 return mappingConfig;
                 
