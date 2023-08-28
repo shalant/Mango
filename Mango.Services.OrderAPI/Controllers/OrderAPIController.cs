@@ -63,7 +63,8 @@ namespace Mango.Services.OrderAPI.Controllers
 
                 var options = new SessionCreateOptions
                 {
-                    SuccessUrl = "https://easdfjkl",
+                    SuccessUrl = stripeRequestDto.ApprovedUrl,
+                    CancelUrl = stripeRequestDto.CancelUrl,
                     LineItems = new List<SessionLineItemOptions>
                 {
                     new SessionLineItemOptions
